@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 /**
  * 1. 파라미터 전송기능
@@ -40,7 +39,6 @@ public class RequestParamServlet extends HttpServlet {
             for (String name : usernames) {
                 System.out.println("username = " + name);
         }
-
             response.getWriter().write("ok");
     }
 }
