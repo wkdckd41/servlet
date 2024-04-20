@@ -11,6 +11,7 @@ import study.servlet.web.frontcontroller.v3.controller.MemberFromControllerV3;
 import study.servlet.web.frontcontroller.v3.controller.MemberListControllerV3;
 import study.servlet.web.frontcontroller.v3.controller.MemberSaveControllerV3;
 import study.servlet.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import study.servlet.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,10 +34,16 @@ public class FrontControllerServletV5 extends HttpServlet {
         handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFromControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
+
+        //v4 추가
+        handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFromControllerV3());
+        handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberSaveControllerV3());
+        handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV3());
     }
 
     private void initHandlerAdapters() {
         handlerAdapters.add(new ControllerV3HandlerAdapter());
+        handlerAdapters.add(new ControllerV4HandlerAdapter());
     }
 
     @Override
